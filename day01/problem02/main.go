@@ -32,10 +32,9 @@ func main() {
 }
 
 func fuel(i int64) int64 {
-	var o int64
-	for i/3-2 >= 0 {
-		i = i/3 - 2
-		o += i
+	o := i/3 - 2
+	if o <= 0 {
+		return 0
 	}
-	return o
+	return o + fuel(o)
 }
